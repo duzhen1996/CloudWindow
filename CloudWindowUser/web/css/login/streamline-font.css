@@ -1,0 +1,201 @@
+/* To add or edit icons, go to fontastic.me */
+
+@charset "UTF-8";
+
+@font-face {
+  font-family: "streamline-font";
+  src:url("/fonts/streamline-font.eot");
+  src:url("/fonts/streamline-font.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/streamline-font.woff") format("woff"),
+    url("/fonts/streamline-font.ttf") format("truetype"),
+    url("/fonts/streamline-font.svg#streamline-font") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "streamline-font" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="streamline-"]:before,
+[class*=" streamline-"]:before {
+  font-family: "streamline-font" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.streamline-lock-locker-streamline:before {
+  content: "\61";
+}
+.streamline-dashboard-speed-streamline:before {
+  content: "\62";
+}
+.streamline-flag-2:before {
+  content: "\63";
+}
+.streamline-transfer-8:before {
+  content: "\64";
+}
+.streamline-shuffle:before {
+  content: "\65";
+}
+.streamline-scale:before {
+  content: "\66";
+}
+.streamline-layers:before {
+  content: "\67";
+}
+.streamline-hierarchy-1:before {
+  content: "\68";
+}
+.streamline-cloud-sync:before {
+  content: "\69";
+}
+.streamline-repeat:before {
+  content: "\6a";
+}
+.streamline-setting-gears-2:before {
+  content: "\6b";
+}
+.streamline-database-setting:before {
+  content: "\6c";
+}
+.streamline-lightbulb-2:before {
+  content: "\6d";
+}
+.streamline-profile-1:before {
+  content: "\6e";
+}
+.streamline-hourglass-1:before {
+  content: "\6f";
+}
+.streamline-calendar-2:before {
+  content: "\70";
+}
+.streamline-crosshair-1:before {
+  content: "\71";
+}
+.streamline-setting-gear:before {
+  content: "\72";
+}
+.streamline-bug-2:before {
+  content: "\73";
+}
+.streamline-pacman:before {
+  content: "\74";
+}
+.streamline-pacman-ghost:before {
+  content: "\75";
+}
+.streamline-settings-streamline-2:before {
+  content: "\76";
+}
+.streamline-ipad-streamline:before {
+  content: "\77";
+}
+.streamline-bulb:before {
+  content: "\78";
+}
+.streamline-binocular:before {
+  content: "\79";
+}
+.streamline-award-5:before {
+  content: "\7a";
+}
+.streamline-connection-3:before {
+  content: "\41";
+}
+.streamline-light-house:before {
+  content: "\42";
+}
+.streamline-beaker-1:before {
+  content: "\43";
+}
+.streamline-trophy:before {
+  content: "\44";
+}
+.streamline-rocket:before {
+  content: "\45";
+}
+.streamline-smartphone:before {
+  content: "\46";
+}
+.streamline-screen-4:before {
+  content: "\47";
+}
+.streamline-cloud:before {
+  content: "\48";
+}
+.streamline-thermometer:before {
+  content: "\49";
+}
+.streamline-transfer-12:before {
+  content: "\4a";
+}
+.streamline-chart-board:before {
+  content: "\4b";
+}
+.streamline-database:before {
+  content: "\4c";
+}
+.streamline-megaphone-2:before {
+  content: "\4d";
+}
+.streamline-add-1:before {
+  content: "\4e";
+}
+.streamline-hand-touch-4:before {
+  content: "\4f";
+}
+.streamline-cloud-refresh:before {
+  content: "\50";
+}
+.streamline-plane-paper-1:before {
+  content: "\51";
+}
+.streamline-phone-vibration:before {
+  content: "\52";
+}
+.streamline-heartpulse:before {
+  content: "\53";
+}
+.streamline-food-dome:before {
+  content: "\54";
+}
+.streamline-connection-2:before {
+  content: "\55";
+}
+.streamline-beach:before {
+  content: "\56";
+}
+.streamline-gameboy:before {
+  content: "\57";
+}
+.streamline-cup-2:before {
+  content: "\58";
+}
+.streamline-bow:before {
+  content: "\59";
+}
+.streamline-balance:before {
+  content: "\5a";
+}
+.streamline-present:before {
+  content: "\30";
+}

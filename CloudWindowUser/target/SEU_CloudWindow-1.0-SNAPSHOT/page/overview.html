@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!--响应式布局-->
+    <title>Manager 概览</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link href="../component/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/overview/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="../css/overview/style.css" rel="stylesheet">
+    <link href="../css/overview/dashboard.css" rel="stylesheet">
+    <link href="../css/overview/css" rel="stylesheet">
+    <link href="../component/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+
+</head>
+<body>
+<!-- /顶部 -->
+<div class="subnavbar">
+    <div class="subnavbar-inner">
+        <div class="container">
+            <ul class="mainnav">
+                <li class="active"><a href="#"><i class="glyphicon glyphicon-dashboard"></i><span>概览</span> </a></li>
+                <li class="dropdown subnavbar-open-right">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="glyphicon glyphicon-cloud"></i>
+                        <span>节点管理</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">节点1</a></li>
+                        <li><a href="#">节点2</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="glyphicon glyphicon-check"></i><span>节点登记</span> </a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-user"></i><span>用户管理</span> </a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-log-out"></i><span>注销登录</span> </a></li>
+            </ul>
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /subnavbar-inner -->
+</div>
+
+<div class="container">
+    <div class="row" style="color: #999999">
+        <div class="jumbotron" style="background-image: url('../resource/pattern-bg.png')">
+            <h1>欢迎你管理员</h1>
+            <p>您所需要的都已经准备就绪</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="widget">
+                <div class="widget-header"><i class="glyphicon glyphicon-scale"></i>
+                    <h3>系统负载</h3>
+                </div>
+                <!-- /widget-header -->
+                <div class="widget-content">
+                    <div class="row">
+                        <!--em是个相对的单位 反正比px强 貌似rem最屌-->
+                        <div class="col-md-12" id="echart4" style="height: 30em"></div><!--折线图-->
+                        <div class="col-md-12" id="echart8" style="height: 30em"></div><!--折线图-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <div class="widget">
+
+                <div class="widget-header"><i class="glyphicon glyphicon-floppy-disk"></i>
+                    <h3>系统总存储/已用存储</h3>
+                </div>
+                <!-- /widget-header -->
+                <div class="widget-content">
+                    <div class="col-md-12" id="echart5" style="height: 35em"></div><!--饼图-->
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <div class="widget">
+                <div class="widget-header"><i class="glyphicon glyphicon-floppy-disk"></i>
+                    <h3>各节点已用储存</h3>
+                </div>
+                <!-- /widget-header -->
+                <div class="widget-content">
+                    <div class="col-md-12" id="echart6" style="height: 35em"></div><!--饼图-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="widget">
+                <div class="widget-header"><i class="glyphicon glyphicon-transfer"></i>
+                    <h3>登录频数</h3>
+                </div>
+                <!-- /widget-header -->
+                <div class="widget-content">
+                    <div class="col-md-12" id="echart7" style="height: 30em"></div><!--折柱混合图-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="widget">
+                <div class="widget-header"><i class="glyphicon glyphicon-th-list"></i>
+                    <h3>节点基本信息</h3>
+                </div>
+                <!-- /widget-header -->
+                <div class="widget-content">
+                    <table class="table table-hover table-striped" id="dataTable">
+                        <thead>
+                        <tr>
+                            <th>节点名</th>
+                            <th>可用空间</th>
+                            <th>已用空间</th>
+                            <th>当前使用人数</th>
+                            <th>CPU占用</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th>节点1</th>
+                            <th>100G</th>
+                            <th>100G</th>
+                            <th>100</th>
+                            <th>高</th>
+                        </tr>
+                        <tr>
+                            <th>节点1</th>
+                            <th>100G</th>
+                            <th>100G</th>
+                            <th>100</th>
+                            <th>高</th>
+                        </tr>
+                        <tr>
+                            <th>节点1</th>
+                            <th>100G</th>
+                            <th>100G</th>
+                            <th>100</th>
+                            <th>高</th>
+                        </tr>
+                        <tr>
+                            <th>节点1</th>
+                            <th>100G</th>
+                            <th>100G</th>
+                            <th>100</th>
+                            <th>高</th>
+                        </tr>
+                        <tr>
+                            <th>节点1</th>
+                            <th>100G</th>
+                            <th>100G</th>
+                            <th>100</th>
+                            <th>高</th>
+                        </tr>
+                        <tr>
+                            <th>节点1</th>
+                            <th>100G</th>
+                            <th>100G</th>
+                            <th>100</th>
+                            <th>高</th>
+                        </tr>
+                        <tr>
+                            <th>节点1</th>
+                            <th>100G</th>
+                            <th>100G</th>
+                            <th>100</th>
+                            <th>高</th>
+                        </tr>
+                        <tr>
+                            <th>节点1</th>
+                            <th>100G</th>
+                            <th>100G</th>
+                            <th>100</th>
+                            <th>高</th>
+                        </tr>
+                        <tr>
+                            <th>节点1</th>
+                            <th>100G</th>
+                            <th>100G</th>
+                            <th>100</th>
+                            <th>高</th>
+                        </tr>
+                        <tr>
+                            <th>节点1</th>
+                            <th>100G</th>
+                            <th>100G</th>
+                            <th>100</th>
+                            <th>高</th>
+                        </tr>
+                        <tr>
+                            <th>节点1</th>
+                            <th>100G</th>
+                            <th>100G</th>
+                            <th>100</th>
+                            <th>高</th>
+                        </tr>
+                        <tr>
+                            <th>节点1</th>
+                            <th>100G</th>
+                            <th>100G</th>
+                            <th>100</th>
+                            <th>高</th>
+                        </tr>
+                        <tr>
+                            <th>节点1</th>
+                            <th>100G</th>
+                            <th>100G</th>
+                            <th>100</th>
+                            <th>高</th>
+                        </tr>
+                        <tr>
+                            <th>节点1</th>
+                            <th>100G</th>
+                            <th>100G</th>
+                            <th>100</th>
+                            <th>高</th>
+                        </tr>
+                        <tr>
+                            <th>节点1</th>
+                            <th>100G</th>
+                            <th>100G</th>
+                            <th>100</th>
+                            <th>高</th>
+                        </tr>
+                        <tr>
+                            <th>节点1</th>
+                            <th>100G</th>
+                            <th>100G</th>
+                            <th>100</th>
+                            <th>高</th>
+                        </tr>
+                        <tr>
+                            <th>节点1</th>
+                            <th>100G</th>
+                            <th>100G</th>
+                            <th>100</th>
+                            <th>高</th>
+                        </tr>
+                        <tr>
+                            <th>节点1</th>
+                            <th>100G</th>
+                            <th>100G</th>
+                            <th>100</th>
+                            <th>高</th>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="../component/jquery-2.1.4.min.js"></script>
+
+<script src="../component/bootstrap/js/bootstrap.min.js"></script>
+
+<!--dataTable-->
+<script src="../component/datatables/media/js/jquery.dataTables.min.js"></script>
+<script src="../component/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+
+<!-- 引入 ECharts 文件 -->
+<script type="text/javascript" src="../component/echarts/echarts.js"></script>
+
+<script>
+    $('#dataTable').DataTable({
+        responsive: true
+    });
+</script>
+
+<script type="text/javascript">//CPU折线图
+
+// 基于准备好的dom，初始化echarts实例
+var myChart1 = echarts.init(document.getElementById('echart4'));
+
+var Xa = new Array(20);
+for (var b = 0; b < 20; b++) {
+    Xa[b] = b - 19;
+}
+
+var flag = -20;
+
+function initialize() {
+    if (flag < 0) {
+        flag++;
+    }
+    return {
+        value: [flag, 0]//只有两位的一个数组
+    }
+}
+function Add() {
+
+    return {
+        value: [0, Math.round(Math.random() * 100)]//只有两位的一个数组
+    }
+}
+var count = 1;
+
+var data = [];//把X轴和Y轴的数值统一到一个数组中去
+for (var q = 0; q < 20; q++) {
+    data.push(initialize());
+}//初始化
+
+option1 = {
+    tooltip: {
+        trigger: 'axis',
+        position: function (pt) {
+            return [pt[0], '10%'];
+        },
+        formatter: function (params) {
+            params = params[0];
+            return "CPU使用率为" + params.value[1] + "%";
+        }
+    },
+    title: {
+        left: 'center',
+        text: ''
+    },
+    toolbox: {
+        feature: {
+            dataView: {show: true, readOnly: false},
+            magicType: {show: true, type: ['line', 'bar']},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    xAxis: {
+        type: 'category',
+        name: "时间",
+        /*axisLabel : {
+         formatter : ''
+         },//成功去掉了坐标轴上的数字*/
+        data: Xa
+    },
+    yAxis: {
+        type: 'value',
+        boundaryGap: [0, '100%'],
+        max: 100,
+        name: "CPU使用率（%）"
+    },
+    series: [
+        {
+            name: '模拟数据',
+            type: 'line',
+            smooth: true,
+            symbol: 'none',
+            sampling: 'average',
+            itemStyle: {
+                normal: {
+                    color: 'rgb(255, 140, 0)'//orange
+                }
+            },
+            animation:false,
+            areaStyle: {
+                normal: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                        offset: 0,
+                        color: 'rgb(255, 165, 0)'
+                    }, {
+                        offset: 1,
+                        color: 'rgb(255, 140, 0)'
+                    }])
+                }
+            },
+            data: data
+        }]//end series
+};//end option
+
+
+var timeTicket = setInterval(function () {
+
+    data.pop();
+    data.push(Add());
+
+    myChart1.setOption({
+        series: [{
+            data: data
+        }]
+    });
+
+    //每次都要过这个循环 使数据达到动态效果
+    for (var j = 0; j < 20; j++) {
+        var m = j;
+        j++;
+        var n = j;
+
+        data[m].value[1] = data[n].value[1];
+        j--;
+    }
+
+}, 1100);//end time interval
+
+// 使用刚指定的配置项和数据显示图表。
+myChart1.setOption(option1);
+</script>
+
+<script  type="text/javascript">//饼图
+    // 基于准备好的dom，初始化echarts实例
+    var myChart2 = echarts.init(document.getElementById('echart5'));
+
+option2 = {
+    title : {
+        text: '',
+        x:'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['已用存储','系统总存储']
+    },
+    series : [
+        {
+            name: '',
+            type: 'pie',
+            radius : '55%',//饼图的半径，数组的第一项是内半径，第二项是外半径。
+            center: ['50%', '60%'],//饼图的中心（圆心）坐标，数组的第一项是横坐标，第二项是纵坐标。
+            data:[
+                {value:300, name:'已用存储'},
+                {value:800, name:'系统总存储'}
+            ],
+            itemStyle: {
+                normal:{
+
+                },
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart2.setOption(option2);
+</script>
+
+
+<script  type="text/javascript">//饼图
+// 基于准备好的dom，初始化echarts实例
+var myChart3= echarts.init(document.getElementById('echart6'));
+
+option3 = {
+    title : {
+        text: '',
+        x:'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['节点一','节点二','节点三','节点四','节点五']
+    },
+    series : [
+        {
+            name: '',
+            type: 'pie',
+            radius : '55%',
+            center: ['50%', '60%'],
+            data:[
+                {value:435, name:'节点一'},
+                {value:310, name:'节点二'},
+                {value:234, name:'节点三'},
+                {value:135, name:'节点四'},
+                {value:1548, name:'节点五'}
+            ],
+            itemStyle: {
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+// 使用刚指定的配置项和数据显示图表。
+myChart3.setOption(option3);
+</script>
+
+<script  type="text/javascript">//折柱混合图
+// 基于准备好的dom，初始化echarts实例
+var myChart4 = echarts.init(document.getElementById('echart7'));
+
+option4 = {
+    tooltip: {
+        trigger: 'axis'
+    },
+    toolbox: {
+        feature: {
+            dataView: {show: true, readOnly: false},
+            magicType: {show: true, type: ['line', 'bar']},
+            restore: {show: true},
+            saveAsImage: {show: true}
+        }
+    },
+    legend: {
+        data:['登录频数','登录次数']
+    },
+    xAxis: [
+        {
+            type: 'category',
+            data: ['星期一','星期二','星期三','星期四','星期五','星期六','星期天']
+        }
+    ],
+    yAxis: [
+        {
+            type: 'value',
+            name: '登录频数（次）',
+            axisLabel: {
+                formatter: '{value}'
+            }
+        },
+        {
+            type: 'value',
+            name: '登录次数（次）',
+            min: 0,
+            axisLabel: {
+                formatter: '{value}'
+            }
+        }
+    ],
+    series: [
+        {
+            name:'节点一',
+            type:'bar',
+            data:[4.9, 7.0, 0, 25.6, 76.7, 135.6, 162.2]
+        },
+
+        {
+            name:'节点二',
+            type:'bar',
+            data:[4.9, 7.0, 23.2, 25.6, 76.7, 0, 162.2]
+        },
+        {
+            name:'节点三',
+            type:'bar',
+            data:[4.9, 7.0, 0, 25.6, 76.7, 135.6, 162.2]
+        },
+        {
+            name:'节点四',
+            type:'bar',
+            data:[4.9, 0, 23.2, 25.6, 76.7, 135.6, 162.2]
+        },
+        {
+            name:'登录总次数',
+            type:'line',
+            yAxisIndex: 1,
+            data:[ 23.3, 34.5, 246.3, 350.2, 460.3, 573.4, 583.0]
+        }
+    ]
+};
+
+// 使用刚指定的配置项和数据显示图表。
+myChart4.setOption(option4);
+</script>
+
+<script type="text/javascript">//带宽折线图
+
+// 基于准备好的dom，初始化echarts实例
+var myChart5 = echarts.init(document.getElementById('echart8'));
+
+var Xa = new Array(20);
+for (var b = 0; b < 20; b++) {
+    Xa[b] = b - 19;
+}
+
+var flag = -20;
+
+function initialize() {
+    if (flag < 0) {
+        flag++;
+    }
+    return {
+        value: [flag, 0]//只有两位的一个数组
+    }
+}
+function Add() {
+
+    return {
+        value: [0, Math.round(Math.random() * 100)]//只有两位的一个数组
+    }
+}
+var count = 1;
+
+var data = [];//把X轴和Y轴的数值统一到一个数组中去
+for (var q = 0; q < 20; q++) {
+    data.push(initialize());
+}//初始化
+
+
+option5 = {
+    tooltip: {
+        trigger: 'axis',
+        position: function (pt) {
+            return [pt[0], '10%'];
+        },
+        formatter: function (params) {
+            params = params[0];
+            return "网络带宽为" + params.value[1]+"M/s";
+        }
+    },
+    title: {
+        left: 'center',
+        text: ''
+    },
+    toolbox: {
+        feature: {
+            dataView: {show: true, readOnly: false},
+            magicType: {show: true, type: ['line', 'bar']},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    xAxis: {
+        type: 'category',
+        name: "时间",
+        /*axisLabel : {
+         formatter : ''
+         },//成功去掉了坐标轴上的数字*/
+        data: Xa
+    },
+    yAxis: {
+        type: 'value',
+        name: "网络带宽（M/s）"
+    },
+    series: [
+        {
+            name: '模拟数据',
+            type: 'line',
+            smooth: true,
+            symbol: 'none',
+            sampling: 'average',
+            itemStyle: {
+                normal: {
+                    color: 'rgb(28,134,238)'//blue
+                }
+            },
+            areaStyle: {
+                normal: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                        offset: 0,
+                        color: 'rgb(30,144,255)'
+                    }, {
+                        offset: 1,
+                        color: 'rgb(30,144,255)'
+                    }])
+                }
+            },
+            data: data
+        }]//end series
+};//end option
+
+
+var timeTicket = setInterval(function () {
+
+    data.pop();
+    data.push(Add());
+
+    myChart5.setOption({
+        series: [{
+            data: data
+        }]
+    });
+    //console.log(data);
+
+    //每次都要过这个循环 使数据达到动态效果
+    for (var j = 0; j < 19; j++) {
+        var m = j;
+        j++;
+        var n = j;
+
+        data[m].value[1] = data[n].value[1];
+        j--;
+    }
+
+
+}, 1000);//end time interval
+
+// 使用刚指定的配置项和数据显示图表。
+myChart5.setOption(option5);
+</script>
+
+
+</body>
+</html>

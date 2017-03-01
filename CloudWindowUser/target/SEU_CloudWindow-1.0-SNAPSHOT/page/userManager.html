@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>用户管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link href="../component/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/overview/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="../css/overview/style.css" rel="stylesheet">
+    <link href="../css/overview/dashboard.css" rel="stylesheet">
+    <link href="../css/overview/css" rel="stylesheet">
+    <link href="../component/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+
+</head>
+<body>
+<!-- /顶部 -->
+<div class="subnavbar">
+    <div class="subnavbar-inner">
+        <div class="container">
+            <ul class="mainnav">
+                <li><a href="#"><i class="glyphicon glyphicon-dashboard"></i><span>概览</span> </a></li>
+                <li class="dropdown subnavbar-open-right">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="glyphicon glyphicon-cloud"></i>
+                        <span>节点管理</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">节点1</a></li>
+                        <li><a href="#">节点2</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="glyphicon glyphicon-check"></i><span>节点登记</span> </a></li>
+                <li  class="active"><a href="#"><i class="glyphicon glyphicon-user"></i><span>用户管理</span> </a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-log-out"></i><span>注销登录</span> </a></li>
+            </ul>
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /subnavbar-inner -->
+</div>
+
+<div class="container">
+    <div class="row" style="color: #999999">
+        <div class="jumbotron" style="background-image: url('../resource/pattern-bg.png')">
+            <h1>用户管理</h1>
+            <p>在这里你可以自由删除和添加用户</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="widget">
+                <div class="widget-header"><i class="glyphicon glyphicon-book"></i>
+                    <h3>登记</h3>
+                </div>
+                <!-- /widget-header -->
+                <div class="widget-content">
+                    <div class="input-group">
+                        <span class="input-group-addon">用户名称</span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="input-group" style="margin-top: 1%">
+                        <span class="input-group-addon">用户密码</span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div type="button" class="btn btn-success" style="margin-top: 1%;width: 100%">添加</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="widget">
+                <div class="widget-header"><i class="glyphicon glyphicon-tasks"></i>
+                    <h3>用户表</h3>
+                </div>
+                <!-- /widget-header -->
+                <div class="widget-content">
+                    <table class="table table-hover table-striped" id="dataTable">
+                        <thead>
+                        <tr>
+                            <th>用户名</th>
+                            <th>IP</th>
+                            <th>使用节点</th>
+                            <th>用户状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th>梅川酷子</th>
+                            <th>192.168.1.1</th>
+                            <th>节点1</th>
+                            <th>离线</th>
+                            <th>
+                                <a class="btn btn-default" href="#"><span class="glyphicon glyphicon-minus
+"></span>&nbsp删除</a>
+                            </th>
+                        </tr>
+
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+    <script src="../component/jquery-2.1.4.min.js"></script>
+
+    <script src="../component/bootstrap/js/bootstrap.min.js"></script>
+
+    <!--dataTable-->
+    <script src="../component/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="../component/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+
+    <script>
+        $(function () {
+            $("[data-toggle='tooltip']").tooltip();
+        });
+
+        $('#dataTable').DataTable({
+            responsive: true
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+
+
+.logo-module.left a{
+    color:#fff;
+    font-size:22px;
+    font-family:sans-serif;
+}
+
+
+@media (max-width: 990px){
+    .logo-module.left a{
+        color:#333;
+    }
+
+}
+
+.nav--fixed {
+    color:#333;
+}
+
+.nav--fixed .logo-module.left a{
+    color:#333;
+}
+
+span.modal-trigger{
+    cursor:pointer;
+}
+
+
+.menu .standout .inner{
+    background:rgba(255, 255, 255, .7);
+    color:#333;
+    border-radius:15px;
+    padding:6px 10px;
+}
+
+
+.nav--fixed .menu .standout .inner{
+    background:#42b4bb;
+    color:#fff;
+}
+
+.modal-trigger.white-bg{
+    background:#fff;
+}
+
+.modal-trigger.white-bg .btn__text{
+    color:#333;
+}
